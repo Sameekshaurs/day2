@@ -1,0 +1,31 @@
+show databases;
+create database institute;
+use institute;
+create table courses
+(c_id int primary key auto_increment,
+c_name varchar(20));
+insert into courses (c_name) values ("java"),("python"),("js");
+select * from courses;
+create table students
+(s_id int primary key,
+s_name varchar(30),
+c_id int);
+show tables;
+select * from students;
+insert into students values (101,"raj",2),(102,"megha",5),
+(103,"rajan",3),(104,"ajay",6);
+select * from students;
+select * from courses;
+-- inner join for common values of 2 tables
+select * from courses inner join students
+on courses.c_id = students.c_id;
+
+-- left join 
+select * from courses left join students
+on courses.c_id = students.c_id;
+
+select * from courses right join students
+on courses.c_id = students.c_id;
+
+select  * from courses as abc inner join students as xyz
+on abc.c_id = xyz.c_id;
